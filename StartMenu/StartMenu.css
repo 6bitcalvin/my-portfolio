@@ -1,0 +1,131 @@
+/* Styles for the Start Menu Backdrop */
+.start-menu-backdrop {
+  position: fixed; /* Ensures it covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: flex-start; /* Align menu to the left */
+  align-items: flex-end; /* Align menu to the bottom */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Styles for the Start Menu itself */
+.start-menu {
+  background-color: #1a1a1a; /* Dark background, adjust to your theme */
+  border: 3px solid #ff00ff; /* Bright border for cyberfunk feel */
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4); /* Glowing shadow */
+  width: 300px; /* Fixed width for the menu */
+  max-height: 80vh; /* Max height to prevent overflow on smaller screens */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enable scrolling if content exceeds max height */
+  margin-left: 1rem; /* Space from the left edge */
+  margin-bottom: 50px; /* Adjust based on your taskbar height */
+  transform-origin: bottom left; /* For potential future animations */
+}
+
+/* Header within the menu */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #00ffff; /* Cyberfunk accent color */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-title {
+  color: #00ffff; /* Bright title color */
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.6); /* Glow effect */
+}
+
+.close-button {
+  background: none;
+  border: 2px solid #ff00ff;
+  color: #ff00ff;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #ff00ff;
+  color: #1a1a1a;
+}
+
+/* Main content area of the menu */
+.menu-content {
+  flex-grow: 1; /* Allows content to take available space */
+}
+
+/* Individual menu sections */
+.menu-section {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  color: #ffcc00; /* Another accent color */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 3px rgba(255, 204, 0, 0.6);
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.3rem;
+  background-color: #2b2b2b; /* Slightly lighter background for items */
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #eee; /* Light text color */
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.menu-item:hover {
+  background-color: #3a3a3a; /* Hover state */
+  transform: translateX(5px); /* Slight hover effect */
+  color: #00ffff; /* Change color on hover */
+  border-color: #00ffff;
+}
+
+/* Styling for the new React Icons */
+.menu-icon {
+  margin-right: 0.5rem; /* Space between icon and text */
+  font-size: 1.2rem; /* Adjust icon size to match previous emoji size */
+  color: #00ffff; /* Example: make icons the accent color */
+  filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.6)); /* Glow effect for icons */
+}
+
+/* Pixel font styling (assuming this is defined globally or imported) */
+.pixel-font {
+  font-family: 'Press Start 2P', cursive; /* Example pixel font */
+  /* You might need to import this font in your main CSS or HTML */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .start-menu {
+    width: 90%; /* Wider on smaller screens */
+    margin-left: 5%; /* Center it roughly */
+    margin-right: 5%;
+    max-height: 70vh;
+  }
+}
