@@ -1,0 +1,17 @@
+.app-container {
+  width: 100%;
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Add padding to the bottom to make space for the fixed taskbar */
+  padding-bottom: 80px; /* Taskbar height (60px) + some extra space (20px) */
+}
+
+/* This keeps the main content area flexible */
+.content-container {
+  flex-grow: 1;
+}
+

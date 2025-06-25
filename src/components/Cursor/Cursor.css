@@ -1,0 +1,31 @@
+.custom-cursor {
+  position: fixed;
+  /* I've increased the z-index to be higher than the music player's. */
+  z-index: 10001;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  pointer-events: none; /* Crucial: lets you click through the cursor */
+  transition: transform 0.1s ease-out, color 0.2s ease;
+  will-change: transform;
+  filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+/* Base state for icons */
+.cursor-default { display: block; }
+.cursor-click { display: none; }
+
+/* Clicking state */
+.custom-cursor.clicking .cursor-default { display: none; }
+.custom-cursor.clicking .cursor-click { display: block; }
+.custom-cursor.clicking {
+  color: var(--accent-color-hover);
+  filter: drop-shadow(0 0 8px var(--accent-color-hover));
+  /* Faster animation */
+  animation: click-pulse 0.15s ease-out; 
+}
+
+@keyframes click-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}

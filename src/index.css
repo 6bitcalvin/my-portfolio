@@ -1,0 +1,71 @@
+/* Import new fonts for the layered text effect */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Press+Start+2P&family=VT323&display=swap');
+
+/* VIBRANT-FUNK color palette */
+:root {
+  --background-color: #0d0d0d;
+  --primary-color: #f92d8e;     /* Electric Pink */
+  --accent-color: #05d9e8;      /* Neon Cyan */
+  --accent-color-hover: #e8f905; /* Volt Yellow */
+  --text-color-primary: #FFFFFF;
+  --text-color-secondary: #CCCCCC;
+  --border-color: var(--primary-color);
+}
+
+/* Custom highlight/selection color */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--accent-color-hover);
+}
+
+/* Basic Reset and Font setup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'VT323', monospace; 
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--background-color);
+  background-image: 
+    linear-gradient(rgba(255, 45, 142, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: var(--text-color-primary);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* Use the new font for the layered effect */
+  font-family: 'Monoton', cursive;
+  color: var(--text-color-primary);
+  text-transform: uppercase;
+  /* Resetting some properties for this font */
+  font-weight: normal; 
+  letter-spacing: 2px;
+}
+
+/* Keep the pixel font for buttons and specific titles */
+.pixel-font,
+.nav-item button {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* --- HIDE DEFAULT CURSOR (Forcefully) --- */
+* {
+  cursor: none !important;
+}
